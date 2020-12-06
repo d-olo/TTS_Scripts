@@ -3,6 +3,7 @@
 --[[ The OnLoad function. This is called after everything in the game save finishes loading.
 Most of your script code goes here. --]]
 function onload()
+   -- Initialize play button.
     params = {
        click_function = "click_func",
        function_owner = self,
@@ -17,10 +18,18 @@ function onload()
        tooltip        = "Start the game!",
    }
     self.createButton(params)
+   -- Initialize deck and bank references.
+    deck = getObjectFromGUID("ec3a79")
+    bank = getObjectFromGUID("c876c7")
 end
 
 function click_func()
-    print("Hello World")
+    -- Deal cards
+    deck.deal(2)
+    -- Deal coins
+    bank.deal(2)
+    -- Destroy button
+    self.destruct()
 end
 
 --[[ The Update function. This is called once per frame. --]]
