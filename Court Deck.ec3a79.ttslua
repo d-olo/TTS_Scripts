@@ -1,0 +1,10 @@
+--[[ Initial deck shuffler ]] --
+
+function onload()
+    self.shuffle()
+end
+
+--[[ The Update function. This is called once per frame. --]]
+function update ()
+    --[[ print('Update loop!') --]]
+end
